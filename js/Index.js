@@ -68,7 +68,7 @@ function form() {
         return Math.floor((Math.random() * 6) + 1);
     }
     document.querySelector("#enviar-formulario").addEventListener("submit", comprobarCaptcha);
-    document.querySelector("#imagen-captcha").src = "../images/captcha" + numeroCaptcha + ".png";
+    document.querySelector("#imagen-captcha").src = "images/captcha" + numeroCaptcha + ".png";
 
     function comprobarCaptcha(e) {
         e.preventDefault();
@@ -78,7 +78,7 @@ function form() {
         } else {
             document.querySelector(".respuesta").innerHTML = "<p>El captcha ingresado es incorrecto, sos una maquina!!!</p>"
             numeroCaptcha = numeroAleatorio();
-            document.querySelector("#imagen-captcha").src = "../images/captcha" + numeroCaptcha + ".png";
+            document.querySelector("#imagen-captcha").src = "images/captcha" + numeroCaptcha + ".png";
             document.getElementById("comprobar-captcha").value = "";
         }
     }
