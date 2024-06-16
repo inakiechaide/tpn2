@@ -1,0 +1,147 @@
+
+<table>
+    <thead>
+        <th colspan="5">mayo</th>
+        <tr>
+            <td> Lunes </td>
+            <td> Martes </td>
+            <td> Miercoles </td>
+            <td> Jueves </td>
+            <td> Viernes </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> 29 </td>
+            <td> 30 </td>
+            <td> 01 </td>
+            <td> 02 </td>
+            <td> 03 </td>
+        </tr>
+        <tr>
+            <td> 06 </td>
+            <td> 07 </td>
+            <td> 08 </td>
+            <td> 09 </td>
+            <td> 10 </td>
+        </tr>
+        <tr>
+            <td> 13 </td>
+            <td> 14 </td>
+            <td> 15 </td>
+            <td> 16 </td>
+            <td> 17 </td>
+        </tr>
+        <tr>
+            <td> 20 </td>
+            <td> 21 </td>
+            <td> 22 </td>
+            <td> 23 </td>
+            <td> 24 </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td> 27 </td>
+            <td> 28 </td>
+            <td> 29 </td>
+            <td> 30 </td>
+            <td> 31 </td>
+        </tr>
+    </tfoot>
+</table>
+
+ <!-- formulario -->
+
+
+<div class="formulario">
+    <p class="turno">Agregar Paciente</p>
+    <form id="formulario">
+        <div class="nombre">
+            <label for="nombre">Apellido y Nombre: </label> 
+            <input type="text" name="nombre" value="" required/>
+        </div>
+        <div class="dni">
+            <label for="documento">Documento de identidad:</label>  
+            <input type="number" name="documento" value="" required/>
+        </div>
+        <div class="sexo"> Sexo: Masculino: <input type="radio" name="sexo" value="masculino" />
+            Femenino: <input type="radio" name="sexo" value="femenino/">
+        </div>
+        <div class="nac">
+            <label for="fecha">Fecha de nacimiento:</label>  
+            <input type="date" name="fecha" required/>
+        </div>
+        <div class="direc"> 
+            <label for="direccion">Direccion:</label> 
+            <input type="text" name="direccion" value="" />
+        </div>
+        <div class="contac">
+            <label for="contacto">Numero de contacto:</label>  
+            <input type="number" name="contacto" value="" required />
+        </div>
+        <div class="cliente"> Se atiende por primera vez con nosotros: Si <input type="radio" name="cliente"
+                value="si" />
+            No <input type="radio" name="cliente" value="no" />
+        </div>
+        <div class="cober">
+            <label for="cobertura">Obra social:</label>  
+            <input type="text" name="cobertura" value="" /></div>
+        <div class="email">
+            <label for="email">Email:</label> 
+            <input type="email" name="email" value="" required/>
+        </div>
+        <div class="dia">
+            <label for="dia">Dia de preferencia para asignacion del turno (dd/mm/aa):</label> 
+            <input type="date" name="dia" />
+        </div>
+        <div class="hora"> Horario de preferencia: <select>
+                <option value="9am">09:00 Am</option>
+                <option value="10am">10:00 Am</option>
+                <option value="11am">11:00 Am</option>
+                <option value="12am">12:00 Am</option>
+                <option value="16pm">16:00 Pm</option>
+                <option value="17pm">17:00 Pm</option>
+                <option value="18pm">18:00 Pm</option>
+                <option value="19pm">19:00 Pm</option>
+            </select> </div>
+        <div class="obs"> 
+            <label for="Observaciones">Observaciones:</label>  
+            <textarea name="Observaciones" rows="4" cols="30"></textarea> </div>
+        <!--captcha -->
+    
+    <section class="captcha">
+        <div class="imagen-captcha"><img id="imagen-captcha" src=""></div>
+        <label for="compromar-captcha">¿Cuantos dientes ve?</label>
+        <div><input type="text" id="comprobar-captcha" name="comprobar-captcha"></div>
+        <button type="submit" id="enviar-formulario">Agregar Paciente</button>
+        
+       
+        <div class="respuesta"></div>
+    </section>
+    </form>
+</div>
+<div class="busqueda">
+    <input id="buscar-paciente"type="text" placeholder="buscar paciente"></input>
+</div>
+    <table class="listado">
+     <thead>
+        <th colspan="5">Pacientes</th>
+        <tr>   
+            <td>Nombre</td>
+            <td>Documento</td>
+            <td>Contacto</td>
+            <td>Cobertura</td>
+            <td>Email</td>
+        </tr>     
+     </thead>
+     <tbody id="body-tabla">
+
+
+     </tbody>
+    </table>
+    <div class="busqueda">
+        <button id="anterior">Anterior</button>
+        <button id="siguiente">Siguiente</button>
+    </div>
+     

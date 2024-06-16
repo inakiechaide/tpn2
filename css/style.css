@@ -1,0 +1,382 @@
+body {
+    width: 100%;
+    height: 100%;
+    /*que ocupe toda la pantalla*/
+    position: relative;
+}
+
+/* header*/
+
+header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+header img {
+    height: 100%;
+    width: 10%;
+    transition: transform 2s linear;
+   
+}
+header img:hover{
+    
+transform: rotateY(360deg);
+
+}
+
+/*cambiar modo oscuro/claro*/
+
+#boton-modo,
+#boton-modoF {
+    text-align: right;
+    width: auto;
+    position: absolute;
+    right: 0;
+    margin-right: 2%;
+}
+
+.oscuro {
+    background-color: black;
+    color: white;
+}
+
+
+
+/*barra para abrir menu desplegable*/
+
+nav.hamburguesa {
+    height: 5%;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#logo-hamburguesa {
+    width: 16%;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+#boton-hamburguesa {
+    display: flex;
+}
+
+
+/*  MENU DESPLEGABLE */
+
+.visible {
+    display: block;
+}
+
+.oculto {
+    display: none;
+}
+
+li {
+    list-style: none;
+    height: 50px;
+}
+
+nav li:not(.boton_cerrar):hover {
+    background-color: grey;
+}
+
+.menu-desplegable {
+    width: 100%;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1;
+    /*hace que al desplegarse la barra tape lo que habia abajo*/
+    position: sticky;
+    top:40px;
+}
+
+.lista-menu-desplegable {
+    padding: 5%;
+    position: relative;
+    margin-top: 0;
+
+}
+
+ul.lista-menu-desplegable {
+    padding: 0;
+}
+
+.menu-desplegable li a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-left: 3%;
+}
+
+.boton-cerrar {
+    text-align: right;
+    height: 5%;
+}
+
+
+
+/* ofertas fotos promociones */
+
+.contenedor,
+.contenedor div {
+    width: 100%;
+}
+
+.contenedor .box div img {
+    width: 60%;
+    border-radius: 40px;
+}
+
+.box div,
+.box p {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor p {
+    color: rgb(182, 222, 230);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.contenedor p.precio {
+    color: rgb(115, 143, 149);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.box p a {
+    text-decoration: none;  /* sacar el subrayado*/
+    border-radius: 5px;
+    background-color: rgb(182, 222, 230);
+    color:white;
+    padding: 2%;
+    
+}
+
+
+
+/* HOME INDEX.HTML */
+
+/* foto principal index*/
+.contiene-sonrisa {
+    width: 100%;
+    
+}
+
+#sonrisa {
+    width: 100%;
+    height: 150px;
+    
+    
+}
+/* Estilos para la sección de bienvenida */
+.bienvenida {
+    
+    padding: 50px;
+    text-align: center;
+    background-color: #cac9c9;
+    transform: translate(0,-5px);
+    
+}
+
+/* Estilos para los servicios destacados */
+
+li p, li h3, .servicios h1{
+    text-align: center;
+}
+.servicios h1{
+    margin-left: 35px;
+    font-size: 30px;    
+}
+
+
+/* Estilos para los testimonios de clientes */
+.testimonios {
+    background-color: #cac9c9;
+    padding: 50px;
+    text-align: center;
+}
+
+.testimonio {
+    margin-bottom: 30px;
+}
+
+
+/* Estilos para la sección de "Por Qué Elegirnos" */
+.por-que-elegirnos {
+    padding: 50px;
+    text-align: center;
+}
+
+
+/* Estilos para el pie de página */
+.footer {
+    background-color: #333333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* FORMULARIO Y TABLA*/
+th, td{
+    border: 2px solid black;
+    
+}
+
+thead{
+    background-color: rgb(120, 208, 214);
+}
+.turno{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 40%;
+}
+.formulario {
+    background-color: rgb(120, 208, 214);
+    width: 45%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    margin-left:25%;
+}
+table{
+    margin-left: 24%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border:solid white;
+    border-radius: 10px;
+    
+}
+
+form{
+    margin: 5px;
+    padding: 5px;
+    border: solid black 1px;
+    border-radius:20px;
+
+    
+}
+.nombre, .dni, .sexo, .nac, .direc, .contac, .cliente, .cober, .email, .dia, .hora, .obs{
+    margin: 4px;
+    
+}
+.captcha{
+    text-align: center;
+}
+
+/*captcha*/
+.imagen-captcha {
+    width: 20%;
+    height: 20%;
+}
+
+#imagen-captcha {
+    width: 100%;
+    margin-left:200%;
+    border-radius: 10px;
+
+}
+.busqueda{
+    width:30%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+   margin-bottom: 5%;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+table{
+    max-width:50%;
+}
+table.listado{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media only screen and (width>=768px) {
+
+    /*en ofertas hacer que los box se vean de dos en dos*/
+    div.box {
+        width: 100%;
+        margin-top: 15%;
+    }
+
+    div.contenedor {
+        display: flex;
+    }
+    
+    .box .a{
+        margin-bottom: 46px;
+    } 
+    .box .b{
+        margin-bottom: 68px;
+    }   
+    /* ocultar barra hamburguesa*/
+
+    nav.hamburguesa, #boton-menu-cerrar{
+        display:none;
+    }
+
+
+    /* barra de navegacion*/
+    .oculto, .lista-menu-desplegable{
+        display:flex;
+        width: 100%;
+        position: sticky;
+        top:0;
+        
+    }
+   
+    .menu-desplegable{
+        border-radius: 10px;
+    }
+    .menu-desplegable li{
+        width:30%;
+    }
+    .menu-desplegable li a{
+        align-content: center;}
+    .lista-menu-desplegable{
+        margin-bottom: 0;  
+    }  
+    .boton-cerrar{
+        display: none;
+    }
+    /* inicio foto sonrisa*/
+   
+    #sonrisa {
+      height: 300px;
+    }
+    .servicios h1{
+        font-size: 50px;    
+    }
+    /* tabla */
+    table{
+        margin-left:28%;
+        width: 40%;
+    }
+   
+
+  
+    
+}
