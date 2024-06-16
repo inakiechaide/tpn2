@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 //menu oculto menu desplegable
 
 document.getElementById("boton-menu-cerrar").addEventListener("click", cambiarEstilo);
@@ -40,17 +40,24 @@ setTimeout(() => {             //simulo click en inicio
 function actualizar(e, enlace) {
     e.preventDefault();
 
+    document.getElementById('actualizar').innerHTML ="<p>Cargando...</p>";  
+
     let href = enlace.getAttribute('href');
 
-    fetch(href).then(response => {
-        response.text().then(text => {
+    fetch(href)
+        .then(response => response.text())
+        .then(text => {
             document.getElementById('actualizar').innerHTML = text;
-            if(href=="html/formulario.html")     //si carga el formulario cargo script formulario
-            form();
+            if (href == "html/formulario.html") //si carga el formulario cargo script formulario
+                form();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('actualizar').innerHTML = "<p>Error al cargar el contenido.</p>"; 
         });
-    });
-
 };
+
+
 function form() {
 
     //captcha
@@ -61,7 +68,7 @@ function form() {
         return Math.floor((Math.random() * 6) + 1);
     }
     document.querySelector("#enviar-formulario").addEventListener("submit", comprobarCaptcha);
-    document.querySelector("#imagen-captcha").src = "images/captcha" + numeroCaptcha + ".png";
+    document.querySelector("#imagen-captcha").src = "../images/captcha" + numeroCaptcha + ".png";
 
     function comprobarCaptcha(e) {
         e.preventDefault();
@@ -71,7 +78,7 @@ function form() {
         } else {
             document.querySelector(".respuesta").innerHTML = "<p>El captcha ingresado es incorrecto, sos una maquina!!!</p>"
             numeroCaptcha = numeroAleatorio();
-            document.querySelector("#imagen-captcha").src = "images/captcha" + numeroCaptcha + ".png";
+            document.querySelector("#imagen-captcha").src = "../images/captcha" + numeroCaptcha + ".png";
             document.getElementById("comprobar-captcha").value = "";
         }
     }
@@ -85,7 +92,7 @@ function form() {
 
     function agregar(e) {
         e.preventDefault();
-
+        
         let data = new FormData(form);
 
         let paciente = {
@@ -106,7 +113,13 @@ function form() {
             if (response.ok) {
                 obtener(); // Actualizar la lista después de agregar
                 form.reset(); // Limpiar el formulario después de agregar
+            }else {
+                throw new Error('Error al agregar el paciente');
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+           
         });
 
 
@@ -162,6 +175,9 @@ function form() {
                 guardar.addEventListener('click', () => guardarCambios(id, inputNombre.value, inputDocumento.value, inputContacto.value, inputCobertura.value, inputEmail.value));
                 tdBorrarEditar.appendChild(guardar);
                 tr.appendChild(tdBorrarEditar);
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
     }
 
@@ -183,7 +199,12 @@ function form() {
         }).then(response => {
             if (response.ok) {
                 obtener(); // Actualizar la lista después de guardar los cambios
+            }else {
+                throw new Error('Error al guardar los cambios');
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
     }
 
@@ -283,7 +304,12 @@ function form() {
         }).then(response => {
             if (response.ok) {
                 obtener(); // Actualizar la lista después de eliminar
+            }else {
+                throw new Error('Error al eliminar el paciente');
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
         })
     };
 
